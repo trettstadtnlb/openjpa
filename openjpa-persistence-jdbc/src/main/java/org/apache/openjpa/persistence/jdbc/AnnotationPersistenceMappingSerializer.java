@@ -503,7 +503,8 @@ public class AnnotationPersistenceMappingSerializer
      * Return enum type for the field.
      */
     protected EnumType getEnumType(FieldMapping field) {
-        if (field.getDeclaredTypeCode() != JavaTypes.OBJECT)
+        if (field.getDeclaredTypeCode() != JavaTypes.OBJECT
+            && field.getDeclaredTypeCode() != JavaTypes.ENUM)
             return null;
         if (!(field.getHandler() instanceof EnumValueHandler))
             return null;
